@@ -197,7 +197,6 @@ void PV_CURRENT()
 /*This function clears the data stored on the SD Card*/
 void CLEAR_DATA()
 {
-    Serial.println("deleting data");
     SD.remove("VD.txt");
     IR_STATE = 1;
 }
@@ -283,8 +282,6 @@ void WRITE_TO_SD()
     }
     printstring += String(millis());
     /*write value to sd card*/
-    /*also print for debugging purposes*/
-    Serial.println(printstring);
     voltageData.println(printstring);
     voltageData.close();
   }
